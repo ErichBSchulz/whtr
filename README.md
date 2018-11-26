@@ -17,9 +17,9 @@ With the code now installed on your system, change into the new whtr directory &
 And you are up & running.  These instructions are clearly biased towards linux users, so for the rest of you my recommendation is [install git](https://www.atlassian.com/git/tutorials/install-git) and then use the [relevant equivalent steps](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line) for your o/s.
 obviously you'll need to have the prerequistes installed for it to actually work, and these are listed below with the relevant Debian packages as well.  Stuff is going to go wrong, especially on other o/ses, but that's why β-testing was invented :wink:  Log it as an issue; use the β-testing tag.
 
-Python 3
-R
-rpy2
+    Python 3
+    R
+    rpy2
 
 So a first, fairly limited functionality, version of the code.  The Load Duration Curve method is currently deactivated (because it is a mess right now... look if you dare).  Given this is half the reason whtr exists, this situation won't remain so for very long... ;-)  The other half of the reason, Simulated Scenarios, isn't even in the code yet. :-(
 But the bare bones is there.
