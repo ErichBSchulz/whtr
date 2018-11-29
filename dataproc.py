@@ -773,7 +773,7 @@ def ldc(nonstandard=None):
 #need to investigate the use of annotation_custom(), but how to access grobTree
 #& textGrob? ...does exist in rpy2.robjects.lib.grid.Grob
         pp.plot()
-        
+
         #~todo~ clipping override ~ to allow labels in the margins, like #whtr
 #need to hook into pp somehow first, but apparently use of this approach will
 #remove the ability to use ggsave(). also, could use the new clip="off" option
@@ -899,7 +899,7 @@ def correlate(nonstandard=None):
     #~todo~ add ability to handle adjusted data
     #~todo~ combined correlation of import/export (assuming at least one is
     #always zero) wrt another variable
-    
+
     #extract all required data from df within defined date range limit
     if dateRange:
         correlf = df[dateRange[0]:dateRange[1]][params]
@@ -1343,7 +1343,7 @@ def co2intensity(nonstandard=None):
 #            codfredex = codf['internal co2'].reindex(ix, fill_value=average)
 #            print("...incomplete CO₂ intensity data from {}, so where not " \
 #            "available using default: {:,.1f}g/kWh".format(importdata,average))
-        
+
         external = [900] * len(imQuant)
     else:
         print("...using default import CO₂ intensity: {}g/kWh".format(
@@ -1433,8 +1433,8 @@ def co2intensity(nonstandard=None):
         #~todo~ extract values of fitted line endpoints & display on plot
         #~todo~ more sophistication in fitting method, auto? or what?
         #~todo~ instead of a fitted line, calc a running average (3 months?)
-    
-    
+
+
     for add in commonTheme:
             pp += add
     pp += watermark( str(codf[cfg.COL_TIMESTAMP][0]) )
@@ -2016,7 +2016,7 @@ def loaddata(datasource, altdf=False, readjust=False):
 
 
 def aggdata():
-    if not df.agged:
+    if not hasattr(df, 'agged'):
         aggs = cfg.config['general'].get('aggregate', "").split()
         #~todo~ parts of the following code are untested...
         if aggs:
@@ -2042,6 +2042,7 @@ def aggdata():
         df.agged = True
 
 
+# Process new data
 def lacedata(datalist):
     global df
     if len(datalist) == 0:
